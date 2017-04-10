@@ -1,0 +1,9 @@
+{
+  "APP_ID": "news-command",
+  "APP_PORT": 3003,
+  
+  "errors" : {
+    "unauthorizedUser": { "statusCode" : 403, "errorMessage" : "Access denied" },
+    "sessionExpired": { "statusCode" : 401, "errorMessage" : "User session is expired" }
+  }
+}
