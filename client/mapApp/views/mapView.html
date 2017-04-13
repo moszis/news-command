@@ -1,15 +1,17 @@
 
+<div ng-app="mapApp" >
 
-<div class="topNav" ng-include="'../mapApp/views/mapTopNavBar.html'"></div>
-
-<div ng-app="mapApp" ng-controller="googleMapCtrl as map">
-   
-   <div id="map"></div>
-   
-   <div id="class" ng-repeat="marker in map.markers">
-         <a href="##" ng-click="map.openInfoWindow($event, marker);"></a>
-   </div>
-
+	<div class="topNav" ng-include="'../mapApp/views/mapTopNavBar.html'"></div>
+	
+	<div ng-controller="googleMapCtrl as map">
+	   
+	   <div id="map"></div>
+	   
+	   <div id="class" ng-repeat="marker in map.markers">
+	         <a href="##" ng-click="map.openInfoWindow($event, marker);"></a>
+	   </div>
+	
+	</div>
+	
+	<full-screen-toggle />
 </div>
-
-<full-screen-toggle />
