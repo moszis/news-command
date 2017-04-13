@@ -1,11 +1,11 @@
 (function () {
     'use strict';
     
-	angular.module('mapApp').controller('fullScreenController', fullScreenController);
+	angular.module('app').controller('fullScreenToggleCtrl', fullScreenToggleCtrl);
                                                        
-	fullScreenController.$inject = ['$scope'];
+	fullScreenToggleCtrl.$inject = ['$scope'];
 
-	function fullScreenController($scope) {
+	function fullScreenToggleCtrl($scope) {
 	
 		var vm = this;
 	    vm.fullScreen = fullScreen;
@@ -29,15 +29,12 @@
 	      function cancelFS() {
 	    	  
 	        if (document.cancelFullScreen){
-	        	
 	        	document.cancelFullScreen();
 	        }
 	        else if (document.mozCancelFullScreen){
-	        	
 	        	document.mozCancelFullScreen();
 	        }
 	        else if (document.webkitCancelFullScreen){
-	        	
 	        	document.webkitCancelFullScreen();
 	        }
 
