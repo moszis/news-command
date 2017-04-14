@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-	angular.module('mapApp', ['ngRoute'])
+	var mapApp = angular.module('mapApp', ['ngRoute'])
 	
 	.config(['$routeProvider', function($routeProvider) {
 	  $routeProvider.when('/map', {

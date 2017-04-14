@@ -1,0 +1,19 @@
+
+  <a href="#" class="list-group-item news-panel-tab" ng-show="!npt.isCollapsed" ng-click="npt.selectTab($event);">
+	<div class="media">
+	  <div class="media-top news-panel-header">
+	    <div class="media-left">
+	       <img src="../../images/RT-icon.jpg" class="news-panel-icon" />
+	    </div>
+	    <div class="media-right">
+	      <h4 class="media-heading">{{npt.event.city}}</h4>
+	    </div>
+	    <div class="media-right" ng-click="npt.hide($event);">
+	       <img src="../../images/close.svg" class="news-panel-collapse-icon" />
+	    </div>
+	  </div>
+	  <div class="media-body media-bottom">
+	    <p>{{npt.event.desc}} {{npt.isCollapsed}}</p>
+	  </div>
+	</div>
+  </a>

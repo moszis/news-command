@@ -1,29 +1,47 @@
-/* app css stylesheet */
-
-/*
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
-}
-
-.menu:before {
-  content: "[";
-}
-
-.menu:after {
-  content: "]";
-}
-*/
 .topNav {
 	z-index: 1;
-    width:60%;
+    width:50%;
     position: absolute;
 	top: 10px;
-	left: 20%;
+	left: 30%;
 	right: 20%;
 }
+
+.leftNav {
+	z-index: 1;
+    width:20%;
+    position: absolute;
+	top: 10%;
+	left: 0px;
+	right: 80%;
+	direction:rtl;
+}
+
+.news-panel-tab{
+	direction: ltr;
+}
+
+.news-panel-icon{
+    height: 25px;
+    width: 25px;
+    display: block;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+.news-panel-header{
+   padding-bottom: 5px;	
+}
+
+.news-panel-collapse-icon {
+    height: 18px;
+    width: 18px;
+    display: block;
+    margin-left: auto;
+    margin-right: 1px;
+   
+}
+
 
 .menu > li + li:before {
   content: "|";
@@ -72,4 +90,10 @@
 h2 {
     margin-bottom:0;
     margin-top: 0;
+}
+
+.scrollable-menu {
+    height: auto;
+    max-height: 90vh;
+    overflow-x: hidden;
 }

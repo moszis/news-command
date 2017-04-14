@@ -13,8 +13,6 @@
 		function test(event){
             event.preventDefault();
             event.stopPropagation();
-            
-            alert("h");
 		}
 		
 	}

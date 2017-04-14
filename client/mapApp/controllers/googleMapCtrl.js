@@ -3,50 +3,20 @@
     
 	angular.module('mapApp').controller('googleMapCtrl', googleMapCtrl);
                                                        
-	googleMapCtrl.$inject = ['$scope', '$window'];
+	googleMapCtrl.$inject = ['$scope', 'newsEventSvc'];
 
-	function googleMapCtrl($scope, $window) {
+	function googleMapCtrl($scope, newsEventSvc) {
 	
 		var vm = this;
 		vm.openInfoWindow = openInfoWindow;
+		vm.setCenter = setCenter;
+		vm.panToEvent = panToEvent;
 
 	    var Syria_Aleppo = {lat: 36.215719, lng: 37.158996};
 	    var random = {lat: 36.215719, lng: 38.158996};
 	    
-	    var cities = [
-	                  {
-	                      city : 'Aleppo',
-	                      desc : 'Rome!',
-	                      lat : 36.215719,
-	                      long : 37.158996
-	                  },
-	                  {
-	                      city : 'New York',
-	                      desc : 'This city is aiiiiite!',
-	                      lat : 40.6700,
-	                      long : -73.9400
-	                  },
-	                  {
-	                      city : 'Chicago',
-	                      desc : 'This is the second best city in the world!',
-	                      lat : 41.8819,
-	                      long : -87.6278
-	                  },
-	                  {
-	                      city : 'Los Angeles',
-	                      desc : 'This city is live!',
-	                      lat : 34.0500,
-	                      long : -118.2500
-	                  },
-	                  {
-	                      city : 'Las Vegas',
-	                      desc : 'Sin City...\'nuff said!',
-	                      lat : 36.0800,
-	                      long : -115.1522
-	                  }
-	              ];
-	    
-
+	    vm.events = newsEventSvc.getEvents();
+        
 	    var mapOptions = {
 	            zoom: 8,
 	            center: new google.maps.LatLng(Syria_Aleppo),
@@ -54,8 +24,6 @@
 	        }
         
 	    vm.map = new google.maps.Map(document.getElementById('map'), mapOptions);
-	    
-
 	    
 	    vm.markers = [];
 	    
@@ -80,8 +48,8 @@
 	    
 
 	    function addMarkers(){
-		    for (var i = 0; i < cities.length; i++){
-		        createMarker(cities[i]);
+		    for (var i = 0; i < $scope.newsEvents.length; i++){
+		        createMarker($scope.newsEvents[i]);
 		    }
 	    }
 	    
@@ -130,8 +98,19 @@
 	        google.maps.event.trigger(selectedMarker, 'click');
 	    }
     
+	    function panToEvent(event){
+	    	vm.map.panTo(new google.maps.LatLng(event.lat, event.long));
+	    }
 	    
-	   addMarkers();
+	    
+	    function setCenter(event){
+	    	vm.map.setCenter(new google.maps.LatLng(event.lat, event.long));
+	    }
+	    
+	    if($scope.newsEvents && $scope.newsEvents.length > 0){
+	    	addMarkers();
+	    }
+	   
 	    
 
 	}

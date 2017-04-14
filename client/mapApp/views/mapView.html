@@ -3,6 +3,8 @@
 
 	<div class="topNav" ng-include="'../mapApp/views/mapTopNavBar.html'"></div>
 	
+	<div class="leftNav" ng-include="'../mapApp/views/mapLeftNavBar.html'"></div>
+	
 	<div ng-controller="googleMapCtrl as map">
 	   
 	   <div id="map"></div>
@@ -13,5 +15,6 @@
 	
 	</div>
 	
-	<full-screen-toggle />
+	<full-screen-toggle></full-screen-toggle>
+	
 </div>
