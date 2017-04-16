@@ -16,7 +16,7 @@ module.exports = function() {
 	app.engine('html', require('ejs').renderFile);
 	 
 	// express/connect middleware
-	app.use(favicon(__dirname + '../../../client/favicon.ico'));
+	app.use(favicon(path.parse(process.mainModule.filename).dir + '/client/favicon.ico'));
 	app.use(morgan('dev'));
 	 
 	require('../routes/server-routes')(app);

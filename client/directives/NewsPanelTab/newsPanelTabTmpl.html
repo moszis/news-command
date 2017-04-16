@@ -1,5 +1,7 @@
 
-  <a href="#" class="list-group-item news-panel-tab" ng-show="!npt.isCollapsed" ng-click="npt.selectTab($event);">
+  <!-- list-group-item news-panel-tab -->
+  
+  <a href="#" class="list-group-item news-panel-tab panel" ng-show="!npt.isCollapsed" ng-click="npt.selectTab($event);">
 	<div class="media">
 	  <div class="media-top news-panel-header">
 	    <div class="media-left">
@@ -13,7 +15,7 @@
 	    </div>
 	  </div>
 	  <div class="media-body media-bottom">
-	    <p>{{npt.event.desc}} {{npt.isCollapsed}}</p>
+	    <p>{{npt.event.desc}}</p>
 	  </div>
 	</div>
   </a>
