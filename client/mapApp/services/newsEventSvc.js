@@ -3,9 +3,10 @@
     
     angular.module('mapApp').factory('newsEventSvc', newsEventSvc);
 
-	function newsEventSvc() {
+	function newsEventSvc($resource) {
 
 		var vm = this;
+
 
 		
 		vm.events = [
@@ -48,18 +49,31 @@
 	              ];
 		
 		
+		
+		
+
+        var getNewsEventsResource = $resource('/news-services/rest/news/:limit');
+    
+  
+        
+        
+        
 		function getEvents(){
-			return vm.events;
+		
+		    var limit = 50;
+			return getNewsEventsResource.query({limit}).$promise;
 		}
 		
-		function hideEvent(event, newsEvent){
-            event.preventDefault();
-            event.stopPropagation();
+		
+		
+		function hideEvent(newsEvent){
+			console.log(newsEvent);
 		}
 		
 		
 		return {
 			getEvents: getEvents,
+			hideEvent: hideEvent
 		}
 		
 	}

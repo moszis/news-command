@@ -1,9 +1,12 @@
 {
   "APP_ID": "news-command",
   "APP_PORT": 3003,
+  "HTTP_SUCCESS_CODE": 200,
   
   "errors" : {
     "unauthorizedUser": { "statusCode" : 403, "errorMessage" : "Access denied" },
     "sessionExpired": { "statusCode" : 401, "errorMessage" : "User session is expired" }
-  }
+  },
+  
+  "NEWS_SERVICE_BASE_URL": "http://localhost:8082/news-services/rest/"
 }

@@ -3,12 +3,13 @@
     
 	angular.module('mapApp').controller('newsEventCtrl', newsEventCtrl);
                                                        
-	mapTopNavBarCtrl.$inject = ['$scope', 'newsEventSvc'];
+	newsEventCtrl.$inject = ['$scope', 'newsEventSvc'];
 
 	function newsEventCtrl($scope, newsEventSvc) {
 		
 		var vm = this;
 		vm.getEvents = getEvents;
+		vm.setHidden = setHidden;
 		
 		function test(event){
             event.preventDefault();
@@ -19,6 +20,11 @@
 			return newsEventSvc.getEvents();
 		}
 		
+		
+		function hideEvent(newsEvent){
+			console.log(newsEvent);
+			console.log($scope.newsEvents);
+		}
 	}
 	
 	

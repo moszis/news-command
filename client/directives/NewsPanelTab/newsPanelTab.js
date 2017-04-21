@@ -35,8 +35,10 @@
     	vm.event = $scope.event;
     	vm.isCollapsed = false;
     	
+
+    	
     	function selectTab(event){
-    		console.log($scope);
+
 			event.preventDefault();
 			event.stopPropagation();
 			
@@ -47,6 +49,8 @@
 			
 			event.preventDefault();
 			event.stopPropagation();
+
+			$scope.$parent.map.hideEvent(vm.event);
 			
 			collapse();
 
@@ -54,6 +58,10 @@
 		
 		function collapse(){
 			vm.isCollapsed = true;
+		}
+		
+		if(vm.event.hidden == true){
+			collapse();
 		}
     };
     
