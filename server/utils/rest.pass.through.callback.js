@@ -4,8 +4,6 @@ var chalk = require('chalk');
 /*util function for processing the restler callbacks and returns the response with no additional processing*/
 exports.processResponse = function (res, result, response) {
 
-console.log(result);
-console.log(response.statusCode );
   if (response != null && response.statusCode != null) {
     console.log(chalk.red('\t\tprocessResponse response status code', response.statusCode));
   }
